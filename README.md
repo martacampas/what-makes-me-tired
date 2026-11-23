@@ -39,12 +39,12 @@ The dataset (`data/Why_Am_I_So_Tired_final.xlsx`, sheet `Daily data`) contains p
 ## Methodology
 The analysis is in `tiredness_analysis.ipynb` and follows these steps:
 
-1. **Data loading and preprocessing:** type conversion and checks for missing values and duplicates. No observation is removed.
-2. **Feature engineering:** total academic hours (class + study), total sleep (night sleep + nap), a weekend indicator, and an event type (party / sick / normal) taken from my notes.
-3. **Exploratory analysis:** distribution and evolution of tiredness, and comparison between university and non-university days and between weekdays and weekends.
-4. **Correlation analysis:** Pearson and Spearman correlations with p-values (Spearman is the main measure because tiredness is ordinal), plus a sensitivity analysis without the 9 exceptional days.
-5. **Temporal analysis:** 3-day rolling averages of sleep and academic workload, and a check with windows from 1 to 7 nights.
-6. **Clustering:** K-means on seven standardized habit variables (tiredness is not used), with the elbow method, silhouette score, Kruskal–Wallis test and a stability check.
+1. **Data loading and preprocessing:** type conversion and checks for missing values and duplicates. No day is removed.
+2. **Feature engineering:** total academic hours (class + study), total sleep (night sleep + nap), a weekend indicator, and the type of day (party / sick / normal) taken from my notes.
+3. **Exploratory analysis:** distribution and evolution of tiredness (Fig. 1), and university days vs. other days.
+4. **Correlation analysis:** Spearman correlations with p-values (tiredness is an ordinal scale), with all days and without the 9 exceptional days (Table I in the report).
+5. **Sleep over several days:** previous night vs. average of the last 3 nights, and averages from 1 to 7 nights (Fig. 2).
+6. **Clustering:** K-means on seven standardized habit variables (tiredness is not used), chosen with the elbow method and the silhouette score, and a Kruskal–Wallis test to compare tiredness between clusters.
 
 ## Repository Structure
 ```
